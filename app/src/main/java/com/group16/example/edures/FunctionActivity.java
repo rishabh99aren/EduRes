@@ -19,19 +19,20 @@ public class FunctionActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
     }
 
-    private void note(View v){
-        
+    public void note(View v){
+        Intent i = new Intent(FunctionActivity.this,Notes_activity.class);
+        startActivity(i);
     }
 
-    private void question(View v){
-
-    }
-
-    private void solution(View v){
+    public void question(View v){
 
     }
 
-    private void forum(View v){
+    public void solution(View v){
+
+    }
+
+    public void forum(View v){
 
     }
 

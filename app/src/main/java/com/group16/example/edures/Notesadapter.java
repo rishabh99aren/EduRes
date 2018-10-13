@@ -23,9 +23,10 @@ import java.util.ArrayList;
                 listitemview = LayoutInflater.from(getContext()).inflate(R.layout.simple_view, parent, false);
             }
             Notes currentnumber=getItem(position);
-            TextView englishtextview= (TextView) listitemview.findViewById(R.id.Title);
+            TextView englishtextview= (TextView) listitemview.findViewById(R.id.title);
+            //TextView uploader = (TextView)listitemview.findViewById(R.id.uploader);
             englishtextview.setText(currentnumber.getTitle());
-
+            //uploader.setText();
             return listitemview;
 
         }

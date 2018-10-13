@@ -4,6 +4,7 @@ public class Notes {
     private String Branch;
     private String Course;
     private String Download_url;
+    //private String Email;
     private int Sem;
     private int Year;
     private String Title;
@@ -19,6 +20,8 @@ public class Notes {
     public String getDownload_url() {
         return Download_url;
     }
+
+    //public String getEmail(){ return Email;}
 
     public int getSem() {
         return Sem;
@@ -36,11 +39,13 @@ public class Notes {
     {
 
     }
-    public Notes(String branch,String co,String url,int sem,int year,String title)
+
+    public Notes(String branch,String co,String url, int sem,int year,String title)
     {
         this.Branch=branch;
         this.Course=co;
         this.Download_url=url;
+        //this.Email=email;
         this.Sem=sem;
         this.Year=year;
         this.Title=title;
