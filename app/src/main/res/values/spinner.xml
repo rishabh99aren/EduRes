@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="branch_array">
+        <item>Null</item>
+        <item>CSE</item>
+        <item>CCE</item>
+        <item>ECE</item>
+        <item>ME</item>
+        <item>MME</item>
+    </string-array>
+
+    <string-array name="sem_array">
+        <item>Null</item>
+        <item>1st</item>
+        <item>2nd</item>
+        <item>3rd</item>
+        <item>4th</item>
+        <item>5th</item>
+        <item>6th</item>
+        <item>7th</item>
+        <item>8th</item>
+    </string-array>
+
+    <string-array name="cse_course_array">
+        <item>Null</item>
+        <item>P-I</item>
+        <item>M-I</item>
+        <item>BE</item>
+        <item>CP</item>
+        <item>P-II</item>
+        <item>M-II</item>
+        <item>DSA</item>
+        <item>VEE</item>
+        <item>EEB</item>
+        <item>DMS</item>
+        <item>DS</item>
+        <item>M-III</item>
+        <item>PTS</item>
+        <item>COA</item>
+        <item>AP</item>
+        <item>IDBMS</item>
+        <item>OTA</item>
+        <item>EFE</item>
+        <item>P AND S</item>
+        <item>DAA</item>
+        <item>TOC</item>
+        <item>OS</item>
+        <item>CN</item>
+        <item>AI</item>
+        <item>CS</item>
+        <item>IDS</item>
+        <item>SWE</item>
+        <item>CD</item>
+    </string-array>
+
+</resources>

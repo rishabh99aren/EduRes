@@ -24,7 +24,9 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.group16.example.edures.SplashActivity" >
+        <activity
+            android:name="com.group16.example.edures.SplashActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,7 +35,12 @@
         </activity>
         <activity android:name="com.group16.example.edures.MainActivity" />
         <activity android:name="com.group16.example.edures.FunctionActivity" />
-        <activity android:name="com.group16.example.edures.Notes_activity" />
+        <activity
+            android:name="com.group16.example.edures.Notes_activity"
+            android:label="Class Notes" />
+        <activity
+            android:name="com.group16.example.edures.Question_activity"
+            android:label="Question Papers" />
         <activity
             android:name="com.google.android.gms.appinvite.PreviewActivity"
             android:exported="true"

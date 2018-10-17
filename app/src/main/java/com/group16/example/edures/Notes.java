@@ -4,10 +4,8 @@ public class Notes {
     private String Branch;
     private String Course;
     private String Download_url;
-    //private String Email;
-    private int Sem;
-    private int Year;
-    private String Title;
+    private String Email;
+    private String Sem;
 
     public String getBranch() {
         return Branch;
@@ -21,18 +19,10 @@ public class Notes {
         return Download_url;
     }
 
-    //public String getEmail(){ return Email;}
+    public String getEmail(){ return Email;}
 
-    public int getSem() {
+    public String getSem() {
         return Sem;
-    }
-
-    public int getYear() {
-        return Year;
-    }
-
-    public String getTitle() {
-        return Title;
     }
 
     public Notes()
@@ -40,15 +30,13 @@ public class Notes {
 
     }
 
-    public Notes(String branch,String co,String url, int sem,int year,String title)
+    public Notes(String branch,String co,String url, String email, String sem)
     {
         this.Branch=branch;
         this.Course=co;
         this.Download_url=url;
-        //this.Email=email;
+        this.Email=email;
         this.Sem=sem;
-        this.Year=year;
-        this.Title=title;
     }
 
 }
