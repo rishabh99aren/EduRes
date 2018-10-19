@@ -810,8 +810,6 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
-id sol
-id solutions
 id spacer
 id split_action_bar
 id spread

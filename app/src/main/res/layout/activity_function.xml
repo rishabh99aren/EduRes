@@ -12,19 +12,16 @@
         android:id="@+id/notes"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_marginTop="80dp"
+        android:layout_centerHorizontal="true"
         android:background="@drawable/notes"
-        android:layout_alignBottom="@+id/question_paper"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="59dp"
-        android:onClick="note"/>
+        android:onClick="note" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="42dp"
-        android:layout_marginTop="205dp"
+        android:layout_below="@+id/notes"
+        android:layout_centerHorizontal="true"
         android:text="CLASS NOTES"
         android:textColor="#ffffff"
         android:textSize="20sp" />
@@ -33,64 +30,38 @@
         android:id="@+id/question_paper"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="92dp"
-        android:layout_marginEnd="57dp"
         android:background="@drawable/question"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="265dp"
         android:onClick="question" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="207dp"
-        android:layout_marginEnd="71dp"
         android:text="PAPERS"
+        android:layout_below="@+id/question_paper"
+        android:layout_centerHorizontal="true"
         android:textColor="#ffffff"
         android:textSize="20sp" />
 
-    <ImageButton
-        android:id="@+id/solutions"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="59dp"
-        android:layout_marginBottom="100dp"
-        android:background="@drawable/solution"
-        android:onClick="solution"/>
-
-    <TextView
-        android:id="@+id/sol"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="58dp"
-        android:layout_marginStart="56dp"
-        android:text="SOLUTIONS"
-        android:textColor="#ffffff"
-        android:textSize="20dp" />
 
     <ImageButton
         android:id="@+id/discussion_forum"
         android:layout_width="130dp"
         android:layout_height="100dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="74dp"
         android:background="@drawable/df"
-        android:layout_marginBottom="100dp"
-        android:layout_marginEnd="40dp"
-        android:onClick="forum"/>
+        android:onClick="forum" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/question_paper"
-        android:layout_alignTop="@+id/sol"
-        android:text="DISCUSSION\n    FORUM"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="60dp"
+        android:text="DISCUSSION FORUM"
         android:textColor="#ffffff"
         android:textSize="20dp" />
 
