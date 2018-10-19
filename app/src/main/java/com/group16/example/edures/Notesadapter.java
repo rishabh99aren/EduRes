@@ -27,9 +27,9 @@ import static android.content.Context.DOWNLOAD_SERVICE;
 
 public class Notesadapter extends ArrayAdapter<Notes> {
     private Context context;
-    public Notesadapter(Context context){
-        this.context=context;
-    }
+//    public Notesadapter(Context context){
+//        this.context=context;
+//    }
     //    private StorageReference mStorageRef;
 //        DownloadManager dm;
 //        long queueid;
@@ -52,9 +52,9 @@ public class Notesadapter extends ArrayAdapter<Notes> {
             relativeLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse(currentnumber.getDownload_url()));
-                    getContext().startActivity(intent);
+//                    Intent intent = new Intent(Intent.ACTION_VIEW);
+//                    intent.setData(Uri.parse(currentnumber.getDownload_url()));
+//                    getContext().startActivity(intent);
                     /*dm = (DownloadManager) getContext().getSystemService(DOWNLOAD_SERVICE);
                     DownloadManager.Request request = new DownloadManager.Request(Uri.parse("https://edures-30879.appspot.com/"
                             +currentnumber.getDownload_url()));

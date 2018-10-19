@@ -1,13 +1,15 @@
 package com.group16.example.edures;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -20,12 +22,16 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
     private FirebaseAuth mAuth;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mAuth = FirebaseAuth.getInstance();
+        progressDialog = new ProgressDialog(MainActivity.this);
+        progressDialog.setTitle("Logging in...");
+        progressDialog.setMessage("It will take few seconds!!");
     }
 
     @Override
@@ -48,6 +54,9 @@ public class MainActivity extends AppCompatActivity {
         EditText e2 = findViewById(R.id.editText2);
         String email = e1.getText().toString();
         String password = e2.getText().toString();
+        Animation shake = AnimationUtils.loadAnimation(MainActivity.this, R.anim.shake);
+        v.startAnimation(shake);
+        progressDialog.show();
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -62,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
                             Toast.makeText(MainActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
+                            progressDialog.dismiss();
                             updateUI(null);
                         }
                     }
