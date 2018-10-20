@@ -1,10 +1,29 @@
 {
     "logs": [
         {
-            "outputFile": "/home/ashish/EduResb/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-land/values-land.xml",
+            "outputFile": "C:\\Users\\RISHABH\\AndroidStudioProjects\\EduResa\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
             "map": [
                 {
-                    "source": "/home/ashish/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/c06b3f174807aea21e4fd1a46a466ee3/res/values-land/values-land.xml",
+                    "source": "C:\\Users\\RISHABH\\.gradle\\caches\\transforms-1\\files-1.1\\design-24.2.0.aar\\3cf335470c285fe8376fc9e72c22573d\\res\\values-land\\values-land.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "232"
+                    },
+                    "to": {
+                        "startLines": "6",
+                        "startColumns": "4",
+                        "startOffsets": "328",
+                        "endLines": "9",
+                        "endColumns": "12",
+                        "endOffsets": "505"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\RISHABH\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\730e532ec853c579a5d53200da563609\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

@@ -3,7 +3,6 @@ package com.group16.example.edures;
 public class Notes {
     private String Branch;
     private String Course;
-    private String Download_url;
     private String Email;
     private String Sem;
 
@@ -13,10 +12,6 @@ public class Notes {
 
     public String getCourse() {
         return Course;
-    }
-
-    public String getDownload_url() {
-        return Download_url;
     }
 
     public String getEmail(){ return Email;}
@@ -30,11 +25,10 @@ public class Notes {
 
     }
 
-    public Notes(String branch,String co,String url, String email, String sem)
+    public Notes(String branch,String co, String email, String sem)
     {
         this.Branch=branch;
         this.Course=co;
-        this.Download_url=url;
         this.Email=email;
         this.Sem=sem;
     }

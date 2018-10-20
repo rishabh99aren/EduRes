@@ -12,8 +12,6 @@ import android.widget.Toast;
 
 public class SplashActivity extends AppCompatActivity {
 
-    String[] permissions = new String[]{Manifest.permission.READ_EXTERNAL_STORAGE};
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/login_back"
     tools:context=".MainActivity">
 
@@ -10,50 +11,63 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/editText"
         android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:gravity="center_horizontal"
-        android:layout_marginBottom="-64dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="62dp"
+        android:layout_marginEnd="0dp"
+        android:gravity="center"
         android:text="Enter Details:"
         android:textColor="#000000"
         android:textSize="25sp"
         android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="65dp"
-        android:layout_marginTop="126dp"
-        android:layout_marginEnd="65dp"
-        android:background="@drawable/rounded"
-        android:ems="11"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        android:padding="10dp"
-        android:textColorHint="#cc8f8f" />
 
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="wrap_content"
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="65dp"
-        android:layout_marginTop="21dp"
-        android:layout_marginEnd="65dp"
-        android:background="@drawable/rounded"
-        android:ems="11"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:padding="10dp"
-        android:textColor="#000000"
-        android:textColorHint="#cc8f8f" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="152dp">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:background="@drawable/rounded"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:textColorHint="#cc8f8f"
+            android:padding="10dp" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        app:passwordToggleEnabled="true"
+        android:layout_marginTop="224dp">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText2"
+            android:hint="Password"
+            android:background="@drawable/rounded"
+            android:padding="10dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:textColorHint="#cc8f8f"
+            android:inputType="textPassword" />
+    </android.support.design.widget.TextInputLayout>
+
 
     <Button
         android:id="@+id/button"
@@ -62,13 +76,30 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="65dp"
+        android:layout_marginStart="50dp"
         android:background="@drawable/rounded_button"
-        android:layout_marginEnd="65dp"
+        android:layout_marginEnd="50dp"
         android:layout_marginBottom="202dp"
         android:ems="14"
         android:onClick="login"
         android:padding="16dp"
         android:text="LOG IN" />
+
+    <Button
+        android:id="@+id/signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="128dp"
+        android:background="@drawable/rounded_button"
+        android:ems="14"
+        android:padding="16dp"
+        android:text="SIGN UP" />
+
+
 
 </RelativeLayout>
