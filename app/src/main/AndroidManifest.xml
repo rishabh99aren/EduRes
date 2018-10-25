@@ -21,15 +21,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity"
+            android:label="Sign In" />
         <activity android:name=".FunctionActivity" />
-        <activity
-            android:name=".Notes_activity"
-            android:label="Class Notes" />
-        <activity
-            android:name=".Question_activity"
-            android:label="Question Papers" />
-        <activity android:name=".Signup"></activity>
+        <activity android:name=".Notes_activity"
+            android:label="Class Notes"
+            android:parentActivityName=".FunctionActivity"/>
+        <activity android:name=".Question_activity"
+            android:label="Question Papers"
+            android:parentActivityName=".FunctionActivity"/>
+        <activity android:name=".Signup"
+            android:label="Sign Up" />
+        <activity android:name=".QueryActivity"
+            android:label="Queries"
+            android:parentActivityName=".FunctionActivity"/>
     </application>
 
 </manifest>

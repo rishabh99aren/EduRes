@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        cardCornerRadius="4dp"
+        android:padding="10dp"
+        android:foregroundGravity="center"
+        android:layout_margin="10dp">
+        <TextView
+            android:id="@+id/from"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="From :"
+            android:textStyle="bold"
+            android:textColor="#000000"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sender"
+            android:text="16ucs155@lnmiit.ac.in"
+            android:layout_marginLeft="50dp"/>
+        <TextView
+            android:id="@+id/type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Query Type :"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:textColor="#000000"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/reason"
+            android:text="Solution Request"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="20dp"/>
+        <TextView
+            android:id="@+id/refrence"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Refrenced File ID :"
+            android:layout_marginTop="40dp"
+            android:textStyle="bold"
+            android:textColor="#000000"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fileId"
+            android:text="1540029964339"
+            android:layout_marginLeft="125dp"
+            android:layout_marginTop="40dp"/>
+        <TextView
+            android:id="@+id/request"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Query :"
+            android:layout_marginTop="60dp"
+            android:textStyle="bold"
+            android:textColor="#000000"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/query"
+            android:text="Please give the ans of Q6..."
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="60dp"/>
+        <Button
+            android:id="@+id/show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Show Comments"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="90dp"/>
+        <Button
+            android:id="@+id/add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Comment"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="90dp"/>
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

@@ -62,4 +62,19 @@
     <item>End-Sem</item>
     </string-array>
 
+    <string-array name="receiver_array">
+        <item>Null</item>
+        <item>Admin</item>
+        <item>Batch-Mates</item>
+        <item>All</item>
+    </string-array>
+
+    <string-array name="query_array">
+        <item>Null</item>
+        <item>Solution Request</item>
+        <item>Duplicate File</item>
+        <item>Error In File</item>
+        <item>Suggestion</item>
+    </string-array>
+
 </resources>

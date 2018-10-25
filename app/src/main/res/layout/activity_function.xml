@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/options"
-    android:background="@drawable/images"
+    android:background="@color/colorPrimary"
     tools:context=".FunctionActivity">
 
     <ImageButton
         android:id="@+id/notes"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="40dp"
         android:layout_centerHorizontal="true"
         android:background="@drawable/notes"
         android:onClick="note" />
@@ -31,8 +31,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:background="@drawable/question"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="265dp"
+        android:layout_centerInParent="true"
         android:onClick="question" />
 
     <TextView
@@ -51,7 +50,7 @@
         android:layout_height="100dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="74dp"
+        android:layout_marginBottom="60dp"
         android:background="@drawable/df"
         android:onClick="forum" />
 
@@ -59,21 +58,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="60dp"
         android:text="DISCUSSION FORUM"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="45dp"
         android:textColor="#ffffff"
         android:textSize="20dp" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="19dp"
-        android:layout_marginTop="20dp"
-        android:text="SIGN OUT"
-        android:onClick="signout"/>
 
 </RelativeLayout>
