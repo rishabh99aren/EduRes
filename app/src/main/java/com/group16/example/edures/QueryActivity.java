@@ -215,7 +215,7 @@ public class QueryActivity extends AppCompatActivity implements AdapterView.OnIt
                                         items.add(postSnapshot.getKey());
                                     }
                                     nadapter.notifyDataSetChanged();
-                                } catch (NullPointerException e) {
+                                } catch (Exception e) {
                                     Intent i = new Intent(QueryActivity.this, QueryActivity.class);
                                     startActivity(i);
                                 }

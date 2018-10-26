@@ -1,7 +1,10 @@
 package com.group16.example.edures;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +12,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
+
 import com.google.firebase.auth.FirebaseAuth;
 
 public class FunctionActivity extends AppCompatActivity {
@@ -23,18 +28,30 @@ public class FunctionActivity extends AppCompatActivity {
     }
 
     public void note(View v){
-        Intent i = new Intent(FunctionActivity.this,Notes_activity.class);
-        startActivity(i);
+        if(isNetworkAvailable()) {
+            Intent i = new Intent(FunctionActivity.this, Notes_activity.class);
+            startActivity(i);
+        }else{
+            Toast.makeText(this,"Network Unavailable!",Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void question(View v){
-        Intent i = new Intent(FunctionActivity.this,Question_activity.class);
-        startActivity(i);
+        if(isNetworkAvailable()) {
+            Intent i = new Intent(FunctionActivity.this,Question_activity.class);
+            startActivity(i);
+        }else{
+            Toast.makeText(this,"Network Unavailable!",Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void forum(View v){
-        Intent i = new Intent(FunctionActivity.this,QueryActivity.class);
-        startActivity(i);
+        if(isNetworkAvailable()) {
+            Intent i = new Intent(FunctionActivity.this,QueryActivity.class);
+            startActivity(i);
+        }else{
+            Toast.makeText(this,"Network Unavailable!",Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
@@ -77,5 +94,11 @@ public class FunctionActivity extends AppCompatActivity {
         });
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
+    }
+
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 }

@@ -3,7 +3,7 @@
     package="com.group16.example.edures">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -21,20 +21,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:label="Sign In" />
         <activity android:name=".FunctionActivity" />
-        <activity android:name=".Notes_activity"
+        <activity
+            android:name=".Notes_activity"
             android:label="Class Notes"
-            android:parentActivityName=".FunctionActivity"/>
-        <activity android:name=".Question_activity"
+            android:parentActivityName=".FunctionActivity" />
+        <activity
+            android:name=".Question_activity"
             android:label="Question Papers"
-            android:parentActivityName=".FunctionActivity"/>
-        <activity android:name=".Signup"
+            android:parentActivityName=".FunctionActivity" />
+        <activity
+            android:name=".Signup"
             android:label="Sign Up" />
-        <activity android:name=".QueryActivity"
+        <activity
+            android:name=".QueryActivity"
             android:label="Queries"
-            android:parentActivityName=".FunctionActivity"/>
+            android:parentActivityName=".FunctionActivity" />
+
     </application>
 
 </manifest>

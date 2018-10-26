@@ -884,6 +884,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id add_comment
 id adjust_height
 id adjust_width
 id alertTitle
@@ -908,6 +909,8 @@ id chronometer
 id clip_horizontal
 id clip_vertical
 id collapseActionView
+id comment
+id commentlist
 id confirmpassword
 id contentPanel
 id course_spinner
@@ -923,6 +926,8 @@ id design_menu_item_text
 id design_navigation_view
 id details
 id dialogButtonOK
+id dialogboxOk
+id dialogboxclose
 id dimensions
 id direct
 id disableHome
@@ -1220,6 +1225,7 @@ string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
 string default_web_client_id
+string fcm_fallback_notification_channel_label
 string firebase_database_url
 string gcm_defaultSenderId
 string google_api_key
