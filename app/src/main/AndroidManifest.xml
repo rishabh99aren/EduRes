@@ -14,6 +14,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".SplashActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,8 +24,10 @@
         </activity>
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:label="Sign In" />
-        <activity android:name=".FunctionActivity" />
+        <activity android:name=".FunctionActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Notes_activity"
             android:label="Class Notes"
@@ -35,6 +38,7 @@
             android:parentActivityName=".FunctionActivity" />
         <activity
             android:name=".Signup"
+            android:screenOrientation="portrait"
             android:label="Sign Up" />
         <activity
             android:name=".QueryActivity"

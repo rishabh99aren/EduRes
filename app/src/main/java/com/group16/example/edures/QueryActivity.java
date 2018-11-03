@@ -1,10 +1,13 @@
 package com.group16.example.edures;
 
 import android.app.Dialog;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -130,6 +133,19 @@ public class QueryActivity extends AppCompatActivity implements AdapterView.OnIt
                     Toast.makeText(QueryActivity.this, "First fill values for all fields", Toast.LENGTH_SHORT).show();
                 }else{
                     dialog.dismiss();
+                    Intent i =new Intent(QueryActivity.this,QueryActivity.class);
+                    PendingIntent p = PendingIntent.getActivity(QueryActivity.this,0,i,PendingIntent.FLAG_ONE_SHOT);
+
+                    NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(QueryActivity.this);
+                    notificationBuilder.setContentIntent(p);
+                    notificationBuilder.setContentTitle("Edures");
+                    notificationBuilder.setContentText("new query is added");
+                    notificationBuilder.setSmallIcon(R.drawable.logo);
+                    notificationBuilder.setAutoCancel(true);
+
+                    NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+                    notificationManager.notify(0,notificationBuilder.build());
+
                     String fileName = System.currentTimeMillis()+"";
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
                     mDatabase=database.getReference().child("Query").child(fileName);
