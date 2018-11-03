@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+
 
     <application
         android:allowBackup="true"
@@ -24,10 +26,11 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait"
-            android:label="Sign In" />
-        <activity android:name=".FunctionActivity"
-            android:screenOrientation="portrait"/>
+            android:label="Sign In"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FunctionActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Notes_activity"
             android:label="Class Notes"
@@ -38,13 +41,13 @@
             android:parentActivityName=".FunctionActivity" />
         <activity
             android:name=".Signup"
-            android:screenOrientation="portrait"
-            android:label="Sign Up" />
+            android:label="Sign Up"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".QueryActivity"
             android:label="Queries"
             android:parentActivityName=".FunctionActivity" />
-
+        <activity android:name=".Forget_password"></activity>
     </application>
 
 </manifest>

@@ -3,9 +3,11 @@ package com.group16.example.edures;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,11 +16,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 
@@ -52,6 +58,42 @@ public class QueryAdapter extends RecyclerView.Adapter<QueryAdapter.ViewHolder>{
         holder.sender.setText(query.get(position).getSender());
         holder.type.setText(query.get(position).getType());
         holder.file.setText(query.get(position).getID());
+        holder.file.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("Questions").child(query.get(position).getID() + ".pdf");
+                    storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            Log.e("Tuts+", "uri: " + uri.toString());
+                            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                            context.startActivity(intent);
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("Notes").child(query.get(position).getID() + ".pdf");
+                            storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                @Override
+                                public void onSuccess(Uri uri) {
+                                    Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                                    context.startActivity(intent);
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Toast.makeText(context,"No file with this id found", Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                        }
+                    });
+                }catch(Exception e){
+                    e.printStackTrace();
+                }
+            }
+        });
+
         holder.details.setText(query.get(position).getDetail());
         holder.add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,6 +153,12 @@ public class QueryAdapter extends RecyclerView.Adapter<QueryAdapter.ViewHolder>{
                                 nadapter = new CommentAdapter(recyclerView, context, comments, comment_items);
                                 recyclerView.setAdapter(nadapter);
                                 nadapter.notifyDataSetChanged();
+                                if(comment_items.size() > 0) {
+                                    dialog.show();
+                                    Log.w("TAG","Working");
+                                }else{
+                                    Toast.makeText(context,"No comment added yet",Toast.LENGTH_SHORT).show();
+                                }
                             }catch (Exception e){
                                 Intent i = new Intent(context,context.getClass());
                                 context.startActivity(i);
@@ -130,11 +178,6 @@ public class QueryAdapter extends RecyclerView.Adapter<QueryAdapter.ViewHolder>{
                         dialog.dismiss();
                     }
                 });
-                if(comment_items.size() > 0) {
-                    dialog.show();
-                }else{
-                    Toast.makeText(context,"No comment added yet",Toast.LENGTH_SHORT).show();
-                }
             }
         });
     }

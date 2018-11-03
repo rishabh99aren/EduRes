@@ -13,6 +13,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -26,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private FirebaseAuth mAuth;
     private ProgressDialog progressDialog;
-    private Button signupBtn;
+    private TextView signupBtn;
+    private TextView forget_password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,13 +38,23 @@ public class MainActivity extends AppCompatActivity {
         progressDialog = new ProgressDialog(MainActivity.this);
         progressDialog.setTitle("Logging in...");
         progressDialog.setMessage("It will take few seconds!!");
-        signupBtn= (Button)findViewById(R.id.signup);
+        signupBtn= (TextView)findViewById(R.id.signup);
         signupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Animation shake = AnimationUtils.loadAnimation(MainActivity.this, R.anim.shake);
                 v.startAnimation(shake);
+                finish();
                 startActivity(new Intent(MainActivity.this,Signup.class));
+            }
+        });
+        forget_password = (TextView) findViewById(R.id.forget_password);
+        forget_password.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Animation shake = AnimationUtils.loadAnimation(MainActivity.this, R.anim.shake);
+                v.startAnimation(shake);
+                startActivity(new Intent(MainActivity.this, Forget_password.class));
             }
         });
     }
@@ -130,6 +142,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 finish();
+                System.exit(0);
             }
         });
         AlertDialog alertDialog = builder.create();

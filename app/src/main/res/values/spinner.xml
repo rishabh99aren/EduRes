@@ -1,40 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="branch_array">
-    <item>Null</item>
-    <item>CSE</item>
-    <item>CCE</item>
-    <item>ECE</item>
-    <item>ME</item>
-    <item>MME</item>
+        <item>Null</item>
+        <item>CSE</item>
+        <item>CCE</item>
+        <item>ECE</item>
+        <item>ME</item>
     </string-array>
 
     <string-array name="sem_array">
-    <item>Null</item>
-    <item>1st</item>
-    <item>2nd</item>
-    <item>3rd</item>
-    <item>4th</item>
-    <item>5th</item>
-    <item>6th</item>
-    <item>7th</item>
-    <item>8th</item>
+        <item>Null</item>
+        <item>1st</item>
+        <item>2nd</item>
+        <item>3rd</item>
+        <item>4th</item>
+        <item>5th</item>
+        <item>6th</item>
+        <item>7th</item>
+        <item>8th</item>
     </string-array>
 
 
-    <string-array name="cse_course_array">
+    <string-array name="course_array_1stsem">
         <item>Null</item>
         <item>P-I</item>
         <item>M-I</item>
         <item>BE</item>
         <item>CP</item>
+        <item>TCE</item>
+    </string-array>
+
+    <string-array name="cse_course_array_2ndsem">
+        <item>Null</item>
         <item>P-II</item>
         <item>M-II</item>
         <item>DSA</item>
         <item>VEE</item>
         <item>EEB</item>
         <item>DMS</item>
-        <item>DS</item>
+    </string-array>
+
+    <string-array name="cse_course_array_3rdsem">
+        <item>Null</item>
         <item>M-III</item>
         <item>PTS</item>
         <item>COA</item>
@@ -42,24 +49,219 @@
         <item>IDBMS</item>
         <item>OTA</item>
         <item>EFE</item>
+    </string-array>
+
+    <string-array name="cse_course_array_4thsem">
+        <item>Null</item>
+        <item>DS</item>
         <item>P AND S</item>
         <item>DAA</item>
         <item>TOC</item>
         <item>OS</item>
-        <item>CN</item>
+    </string-array>
+
+    <string-array name="cse_course_array_5thsem">
+        <item>Null</item>
         <item>AI</item>
         <item>CS</item>
         <item>IDS</item>
         <item>SWE</item>
         <item>CD</item>
+        <item>IMAD</item>
     </string-array>
 
+    <string-array name="cse_course_array_6thsem">
+        <item>Null</item>
+        <item>CD</item>
+    </string-array>
+
+    <string-array name="cse_course_array_7thsem">
+        <item>Null</item>
+    </string-array>
+
+    <string-array name="cse_course_array_8thsem">
+        <item>Null</item>
+    </string-array>
+
+    <string-array name="cce_course_array_2ndsem">
+        <item>Null</item>
+        <item>P-II</item>
+        <item>M-II</item>
+        <item>DSA</item>
+        <item>VEE</item>
+        <item>EEB</item>
+        <item>DMS</item>
+        <item>AE</item>
+    </string-array>
+
+    <string-array name="cce_course_array_3rdsem">
+        <item>Null</item>
+        <item>SAS</item>
+        <item>M-III</item>
+        <item>DCS</item>
+        <item>COA</item>
+        <item>IDBMS</item>
+        <item>AP</item>
+    </string-array>
+
+    <string-array name="cce_course_array_4thsem">
+        <item>Null</item>
+        <item>DAA</item>
+        <item>OS</item>
+        <item>CSE</item>
+        <item>PC</item>
+        <item>SSCL</item>
+        <item>PS</item>
+    </string-array>
+
+
+    <string-array name="cce_course_array_5thsem">
+        <item>Null</item>
+        <item>EFE</item>
+        <item>PTS</item>
+        <item>IDS</item>
+        <item>AI</item>
+        <item>DC</item>
+        <item>DCP</item>
+        <item>SE</item>
+    </string-array>
+
+
+    <string-array name="cce_course_array_6thsem">
+        <item>Null</item>
+        <item>EFE</item>
+        <item>PTS</item>
+        <item>CN</item>
+        <item>IOT</item>
+    </string-array>
+
+
+    <string-array name="cce_course_array_7thsem">
+        <item>Null</item>
+    </string-array>
+
+
+
+    <string-array name="cce_course_array_8thsem">
+        <item>Null</item>
+    </string-array>
+
+    <string-array name="ece_course_array_2ndsem">
+        <item>Null</item>
+        <item>P-II</item>
+        <item>M-II</item>
+        <item>DSA</item>
+        <item>VEE</item>
+        <item>EEB</item>
+        <item>ANAL</item>
+        <item>NAS</item>
+    </string-array>
+
+    <string-array name="ece_course_array_3rdsem">
+        <item>Null</item>
+        <item>SNS</item>
+        <item>M-III</item>
+        <item>SDC</item>
+        <item>EE</item>
+    </string-array>
+
+    <string-array name="ece_course_array_4thsem">
+        <item>Null</item>
+        <item>PS</item>
+        <item>PC</item>
+        <item>SSCL</item>
+        <item>CSE</item>
+        <item>ME</item>
+        <item>VSLI</item>
+    </string-array>
+
+    <string-array name="ece_course_array_5thsem">
+        <item>Null</item>
+        <item>EFE</item>
+        <item>PTS</item>
+        <item>DC</item>
+        <item>MNI</item>
+        <item>DSP</item>
+        <item>DMS</item>
+    </string-array>
+
+    <string-array name="ece_course_array_6thsem">
+        <item>Null</item>
+        <item>EFE</item>
+        <item>PTS</item>
+        <item>CN</item>
+    </string-array>
+
+
+    <string-array name="ece_course_array_7thsem">
+        <item>Null</item>
+    </string-array>
+
+
+    <string-array name="ece_course_array_8thsem">
+        <item>Null</item>
+    </string-array>
+
+    <string-array name="me_course_array_2ndsem">
+        <item>Null</item>
+        <item>P-II</item>
+        <item>M-II</item>
+        <item>DSA</item>
+        <item>VEE</item>
+        <item>EEB</item>
+        <item>EPM</item>
+    </string-array>
+
+    <string-array name="me_course_array_3rdsem">
+        <item>Null</item>
+        <item>MEE</item>
+        <item>MS</item>
+        <item>MT-1</item>
+        <item>IEM</item>
+        <item>ET</item>
+    </string-array>
+
+    <string-array name="me_course_array_4thsem">
+        <item>Null</item>
+        <item>MD-1</item>
+        <item>KND</item>
+        <item>FMM</item>
+        <item>MIC</item>
+        <item>TQM</item>
+        <item>MT-2</item>
+    </string-array>
+
+    <string-array name="me_course_array_5thsem">
+        <item>Null</item>
+        <item>HT</item>
+        <item>MD-2</item>
+        <item>CAD-CAM</item>
+        <item>EFE</item>
+        <item>PTS</item>
+    </string-array>
+
+    <string-array name="me_course_array_6thsem">
+        <item>Null</item>
+        <item>ICE</item>
+        <item>EFE</item>
+        <item>PTS</item>
+    </string-array>
+
+    <string-array name="me_course_array_7thsem">
+        <item>Null</item>
+    </string-array>
+
+    <string-array name="me_course_array_8thsem">
+        <item>Null</item>
+    </string-array>
+
+
     <string-array name="type_array">
-    <item>Null</item>
-    <item>Assignment</item>
-    <item>Quiz</item>
-    <item>Mid-Sem</item>
-    <item>End-Sem</item>
+        <item>Null</item>
+        <item>Assignment</item>
+        <item>Quiz</item>
+        <item>Mid-Sem</item>
+        <item>End-Sem</item>
     </string-array>
 
     <string-array name="receiver_array">

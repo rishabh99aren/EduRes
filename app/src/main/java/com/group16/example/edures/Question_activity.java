@@ -35,7 +35,7 @@ import java.util.ArrayList;
 
 public class Question_activity extends AppCompatActivity {
     private DatabaseReference mDatabase;
-    private ArrayList <Questions> questions = new ArrayList<>() ;
+    private ArrayList<Questions> questions = new ArrayList<>();
     private ArrayList<String> items = new ArrayList<>();
     private StorageReference mStorageRef;
     private QuestionAdapter nadapter;
@@ -46,7 +46,9 @@ public class Question_activity extends AppCompatActivity {
     private String sel_course;
     private String sel_type;
     private ProgressDialog progressDialog;
+    Spinner course;
     private RecyclerView recyclerView;
+    ArrayAdapter<CharSequence> adapter3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,10 +62,10 @@ public class Question_activity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        mDatabase=database.getReference().child("Questions");
-        recyclerView  = findViewById(R.id.questionslist);
+        mDatabase = database.getReference().child("Questions");
+        recyclerView = findViewById(R.id.questionslist);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        nadapter = new QuestionAdapter(recyclerView,this,questions, items);
+        nadapter = new QuestionAdapter(recyclerView, this, questions, items);
         recyclerView.setAdapter(nadapter);
 
         mDatabase.addValueEventListener(new ValueEventListener() {
@@ -77,7 +79,7 @@ public class Question_activity extends AppCompatActivity {
                     String email = postSnapshot.child("Email").getValue(String.class);
                     String sem = postSnapshot.child("Sem").getValue(String.class);
                     String type = postSnapshot.child("Type").getValue(String.class);
-                    questions.add(new Questions(branch,course,email,sem,type));
+                    questions.add(new Questions(branch, course, email, sem, type));
                     items.add(postSnapshot.getKey());
                     nadapter.notifyDataSetChanged();
                 }
@@ -112,7 +114,7 @@ public class Question_activity extends AppCompatActivity {
 
             }
         });
-
+        course = dialog.findViewById(R.id.course_spinner);
         Spinner sem = dialog.findViewById(R.id.sem_spinner);
         ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this,
                 R.array.sem_array, android.R.layout.simple_spinner_item);
@@ -121,24 +123,295 @@ public class Question_activity extends AppCompatActivity {
         sem.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                sel_sem = parent.getItemAtPosition(position).toString();
-            }
+                Spinner spinner = (Spinner) parent;
+                if (spinner.getId() == R.id.sem_spinner) {
+                    sel_sem = parent.getItemAtPosition(position).toString();
+                    if (sel_branch.equals("Null")) {
+                        sel_course = "Null";
+                    } else {
+                        switch (sel_branch) {
+                            case "CSE":
+                                switch (sel_sem) {
+                                    case "1st":
+                                        adapter3 = ArrayAdapter.createFromResource(Question_activity.this,
+                                                R.array.course_array_1stsem, android.R.layout.simple_spinner_item);
+                                        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                        course.setAdapter(adapter3);
+                                        course.setOnItemSelectedListener(this);
+                                        break;
 
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
 
-            }
-        });
+                                    case "2nd":
+                                        adapter3 = ArrayAdapter.createFromResource(Question_activity.this,
+                                                R.array.cse_course_array_2ndsem, android.R.layout.simple_spinner_item);
+                                        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                        course.setAdapter(adapter3);
+                                        course.setOnItemSelectedListener(this);
+                                        break;
 
-        Spinner course = dialog.findViewById(R.id.course_spinner);
-        ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(this,
-                R.array.cse_course_array, android.R.layout.simple_spinner_item);
-        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        course.setAdapter(adapter3);
-        course.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                sel_course = parent.getItemAtPosition(position).toString();
+                                    case "3rd":
+                                        adapter3 = ArrayAdapter.createFromResource(Question_activity.this,
+                                                R.array.cse_course_array_3rdsem, android.R.layout.simple_spinner_item);
+                                        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                        course.setAdapter(adapter3);
+                                        course.setOnItemSelectedListener(this);
+                                        break;
+
+                                    case "4th":
+                                        adapter3 = ArrayAdapter.createFromResource(Question_activity.this,
+                                                R.array.cse_course_array_4thsem, android.R.layout.simple_spinner_item);
+                                        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                        course.setAdapter(adapter3);
+                                        course.setOnItemSelectedListener(this);
+                                        break;
+
+                                    case "5th":
+                                        adapter3 = ArrayAdapter.createFromResource(Question_activity.this,
+                                                R.array.cse_course_array_5thsem, android.R.layout.simple_spinner_item);
+                                        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                        course.setAdapter(adapter3);
+                                        course.setOnItemSelectedListener(this);
+                                        break;
+
+                                    case "6th":
+                                        adapter3 = ArrayAdapter.createFromResource(Question_activity.this,
+                                                R.array.cse_course_array_6thsem, android.R.layout.simple_spinner_item);
+                                        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                        course.setAdapter(adapter3);
+                                        course.setOnItemSelectedListener(this);
+                                        break;
+
+                                    case "7th":
+                                        adapter3 = ArrayAdapter.createFromResource(Question_activity.this,
+                                                R.array.cse_course_array_7thsem, android.R.layout.simple_spinner_item);
+                                        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                        course.setAdapter(adapter3);
+                                        course.setOnItemSelectedListener(this);
+                                        break;
+
+                                    case "8th":
+                                        adapter3 = ArrayAdapter.createFromResource(Question_activity.this,
+                                                R.array.cse_course_array_8thsem, android.R.layout.simple_spinner_item);
+                                        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                        course.setAdapter(adapter3);
+                                        course.setOnItemSelectedListener(this);
+                                        break;
+                                }
+                                break;
+                            case "CCE":
+                                switch (sel_sem) {
+                                    case "1st":
+                                        adapter3 = ArrayAdapter.createFromResource(Question_activity.this,
+                                                R.array.course_array_1stsem, android.R.layout.simple_spinner_item);
+                                        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                        course.setAdapter(adapter3);
+                                        course.setOnItemSelectedListener(this);
+                                        break;
+
+
+                                    case "2nd":
+                                        adapter3 = ArrayAdapter.createFromResource(Question_activity.this,
+                                                R.array.cce_course_array_2ndsem, android.R.layout.simple_spinner_item);
+                                        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                        course.setAdapter(adapter3);
+                                        course.setOnItemSelectedListener(this);
+                                        break;
+
+                                    case "3rd":
+                                        adapter3 = ArrayAdapter.createFromResource(Question_activity.this,
+                                                R.array.cce_course_array_3rdsem, android.R.layout.simple_spinner_item);
+                                        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                        course.setAdapter(adapter3);
+                                        course.setOnItemSelectedListener(this);
+                                        break;
+
+                                    case "4th":
+                                        adapter3 = ArrayAdapter.createFromResource(Question_activity.this,
+                                                R.array.cce_course_array_4thsem, android.R.layout.simple_spinner_item);
+                                        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                        course.setAdapter(adapter3);
+                                        course.setOnItemSelectedListener(this);
+                                        break;
+
+                                    case "5th":
+                                        adapter3 = ArrayAdapter.createFromResource(Question_activity.this,
+                                                R.array.cce_course_array_5thsem, android.R.layout.simple_spinner_item);
+                                        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                        course.setAdapter(adapter3);
+                                        course.setOnItemSelectedListener(this);
+                                        break;
+
+                                    case "6th":
+                                        adapter3 = ArrayAdapter.createFromResource(Question_activity.this,
+                                                R.array.cce_course_array_6thsem, android.R.layout.simple_spinner_item);
+                                        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                        course.setAdapter(adapter3);
+                                        course.setOnItemSelectedListener(this);
+                                        break;
+
+                                    case "7th":
+                                        adapter3 = ArrayAdapter.createFromResource(Question_activity.this,
+                                                R.array.cce_course_array_7thsem, android.R.layout.simple_spinner_item);
+                                        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                        course.setAdapter(adapter3);
+                                        course.setOnItemSelectedListener(this);
+                                        break;
+
+                                    case "8th":
+                                        adapter3 = ArrayAdapter.createFromResource(Question_activity.this,
+                                                R.array.cce_course_array_8thsem, android.R.layout.simple_spinner_item);
+                                        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                        course.setAdapter(adapter3);
+                                        course.setOnItemSelectedListener(this);
+                                        break;
+
+                                }
+                                break;
+
+                            case "ECE":
+                                switch (sel_sem) {
+                                    case "1st":
+                                        adapter3 = ArrayAdapter.createFromResource(Question_activity.this,
+                                                R.array.course_array_1stsem, android.R.layout.simple_spinner_item);
+                                        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                        course.setAdapter(adapter3);
+                                        course.setOnItemSelectedListener(this);
+                                        break;
+
+
+                                    case "2nd":
+                                        adapter3 = ArrayAdapter.createFromResource(Question_activity.this,
+                                                R.array.ece_course_array_2ndsem, android.R.layout.simple_spinner_item);
+                                        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                        course.setAdapter(adapter3);
+                                        course.setOnItemSelectedListener(this);
+                                        break;
+
+                                    case "3rd":
+                                        adapter3 = ArrayAdapter.createFromResource(Question_activity.this,
+                                                R.array.ece_course_array_3rdsem, android.R.layout.simple_spinner_item);
+                                        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                        course.setAdapter(adapter3);
+                                        course.setOnItemSelectedListener(this);
+                                        break;
+
+                                    case "4th":
+                                        adapter3 = ArrayAdapter.createFromResource(Question_activity.this,
+                                                R.array.ece_course_array_4thsem, android.R.layout.simple_spinner_item);
+                                        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                        course.setAdapter(adapter3);
+                                        course.setOnItemSelectedListener(this);
+                                        break;
+
+                                    case "5th":
+                                        adapter3 = ArrayAdapter.createFromResource(Question_activity.this,
+                                                R.array.ece_course_array_5thsem, android.R.layout.simple_spinner_item);
+                                        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                        course.setAdapter(adapter3);
+                                        course.setOnItemSelectedListener(this);
+                                        break;
+
+                                    case "6th":
+                                        adapter3 = ArrayAdapter.createFromResource(Question_activity.this,
+                                                R.array.ece_course_array_6thsem, android.R.layout.simple_spinner_item);
+                                        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                        course.setAdapter(adapter3);
+                                        course.setOnItemSelectedListener(this);
+                                        break;
+
+                                    case "7th":
+                                        adapter3 = ArrayAdapter.createFromResource(Question_activity.this,
+                                                R.array.ece_course_array_7thsem, android.R.layout.simple_spinner_item);
+                                        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                        course.setAdapter(adapter3);
+                                        course.setOnItemSelectedListener(this);
+                                        break;
+
+                                    case "8th":
+                                        adapter3 = ArrayAdapter.createFromResource(Question_activity.this,
+                                                R.array.ece_course_array_8thsem, android.R.layout.simple_spinner_item);
+                                        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                        course.setAdapter(adapter3);
+                                        course.setOnItemSelectedListener(this);
+                                        break;
+
+                                }
+                                break;
+
+                            case "ME":
+                                switch (sel_sem) {
+                                    case "1st":
+                                        adapter3 = ArrayAdapter.createFromResource(Question_activity.this,
+                                                R.array.course_array_1stsem, android.R.layout.simple_spinner_item);
+                                        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                        course.setAdapter(adapter3);
+                                        course.setOnItemSelectedListener(this);
+                                        break;
+
+
+                                    case "2nd":
+                                        adapter3 = ArrayAdapter.createFromResource(Question_activity.this,
+                                                R.array.me_course_array_2ndsem, android.R.layout.simple_spinner_item);
+                                        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                        course.setAdapter(adapter3);
+                                        course.setOnItemSelectedListener(this);
+                                        break;
+
+                                    case "3rd":
+                                        adapter3 = ArrayAdapter.createFromResource(Question_activity.this,
+                                                R.array.me_course_array_3rdsem, android.R.layout.simple_spinner_item);
+                                        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                        course.setAdapter(adapter3);
+                                        course.setOnItemSelectedListener(this);
+                                        break;
+
+                                    case "4th":
+                                        adapter3 = ArrayAdapter.createFromResource(Question_activity.this,
+                                                R.array.me_course_array_4thsem, android.R.layout.simple_spinner_item);
+                                        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                        course.setAdapter(adapter3);
+                                        course.setOnItemSelectedListener(this);
+                                        break;
+
+                                    case "5th":
+                                        adapter3 = ArrayAdapter.createFromResource(Question_activity.this,
+                                                R.array.me_course_array_5thsem, android.R.layout.simple_spinner_item);
+                                        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                        course.setAdapter(adapter3);
+                                        course.setOnItemSelectedListener(this);
+                                        break;
+
+                                    case "6th":
+                                        adapter3 = ArrayAdapter.createFromResource(Question_activity.this,
+                                                R.array.me_course_array_6thsem, android.R.layout.simple_spinner_item);
+                                        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                        course.setAdapter(adapter3);
+                                        course.setOnItemSelectedListener(this);
+                                        break;
+
+                                    case "7th":
+                                        adapter3 = ArrayAdapter.createFromResource(Question_activity.this,
+                                                R.array.me_course_array_7thsem, android.R.layout.simple_spinner_item);
+                                        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                        course.setAdapter(adapter3);
+                                        course.setOnItemSelectedListener(this);
+                                        break;
+
+                                    case "8th":
+                                        adapter3 = ArrayAdapter.createFromResource(Question_activity.this,
+                                                R.array.me_course_array_8thsem, android.R.layout.simple_spinner_item);
+                                        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                        course.setAdapter(adapter3);
+                                        course.setOnItemSelectedListener(this);
+                                        break;
+
+                                }
+                                break;
+                        }
+                    }
+                } else if (spinner.getId() == R.id.course_spinner) {
+                    sel_course = parent.getSelectedItem().toString();
+                }
             }
 
             @Override
@@ -168,9 +441,9 @@ public class Question_activity extends AppCompatActivity {
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if((sel_branch.equals("Null")) || (sel_sem.equals("Null")) || (sel_course.equals("Null"))) {
+                if ((sel_branch.equals("Null")) || (sel_sem.equals("Null")) || (sel_course.equals("Null"))) {
                     Toast.makeText(Question_activity.this, "First select values for all fields", Toast.LENGTH_SHORT).show();
-                }else{
+                } else {
                     dialog.dismiss();
                     Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
                     intent.setType("application/pdf");
@@ -241,12 +514,15 @@ public class Question_activity extends AppCompatActivity {
                                 }
 
                             });
+                }else if(data==null){
+                    progressDialog.dismiss();
+                    Toast.makeText(Question_activity.this,"Please select file to upload", Toast.LENGTH_SHORT).show();
                 }
                 break;
         }
     }
 
-    public void filter(View v){
+    public void filter(View v) {
         final Dialog dialog = new Dialog(Question_activity.this);
         dialog.setContentView(R.layout.option_panel_questions);
         Spinner branch = dialog.findViewById(R.id.branch_spinner);
@@ -266,6 +542,8 @@ public class Question_activity extends AppCompatActivity {
             }
         });
 
+        course = dialog.findViewById(R.id.course_spinner);
+
         Spinner sem = dialog.findViewById(R.id.sem_spinner);
         ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this,
                 R.array.sem_array, android.R.layout.simple_spinner_item);
@@ -275,23 +553,6 @@ public class Question_activity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 sel_sem = parent.getItemAtPosition(position).toString();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        Spinner course = dialog.findViewById(R.id.course_spinner);
-        ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(this,
-                R.array.cse_course_array, android.R.layout.simple_spinner_item);
-        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        course.setAdapter(adapter3);
-        course.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                sel_course = parent.getItemAtPosition(position).toString();
             }
 
             @Override
@@ -323,8 +584,8 @@ public class Question_activity extends AppCompatActivity {
             public void onClick(View v) {
                 dialog.dismiss();
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
-                mDatabase=database.getReference().child("Questions");
-                final RecyclerView recyclerview=findViewById(R.id.questionslist);
+                mDatabase = database.getReference().child("Questions");
+                final RecyclerView recyclerview = findViewById(R.id.questionslist);
                 recyclerview.setAdapter(nadapter);
 
                 mDatabase.addValueEventListener(new ValueEventListener() {
@@ -338,9 +599,9 @@ public class Question_activity extends AppCompatActivity {
                             String email = postSnapshot.child("Email").getValue(String.class);
                             String sem = postSnapshot.child("Sem").getValue(String.class);
                             String type = postSnapshot.child("Type").getValue(String.class);
-                            if((sel_branch.equals("Null") || branch.equals(sel_branch)) &&
+                            if ((sel_branch.equals("Null") || branch.equals(sel_branch)) &&
                                     (sel_sem.equals("Null") || sem.equals(sel_sem)) &&
-                                    (sel_course.equals("Null") ||course.equals(sel_course)) &&
+                                    (sel_course.equals("Null") || course.equals(sel_course)) &&
                                     (sel_type.equals("Null") || type.equals(sel_type))) {
                                 items.add(postSnapshot.getKey());
                                 questions.add(new Questions(branch, course, email, sem, type));

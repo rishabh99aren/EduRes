@@ -17,8 +17,13 @@ android {
         }
     }
 }
+repositories{
+    mavenCentral()
+}
 
 dependencies {
+//    implementation 'com.facebook.android:facebook-login:[4,5)'
+    compile 'com.facebook.android:facebook-android-sdk:4.38.1'
     implementation 'com.google.firebase:firebase-messaging:17.3.4'
     compile "com.android.support:design:24.2.0"
     implementation 'com.google.android.gms:play-services-appinvite:16.0.4'
