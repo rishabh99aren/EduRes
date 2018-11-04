@@ -968,6 +968,7 @@ drawable notify_panel_notification_icon_bg
 drawable question
 drawable rounded
 drawable rounded_button
+drawable sad
 drawable solution
 drawable splash_background
 drawable tooltip_frame_dark
@@ -1094,6 +1095,7 @@ id icon_group
 id icon_only
 id ifRoom
 id image
+id imageView
 id info
 id inline
 id invisible
@@ -1118,6 +1120,7 @@ id multiply
 id navigation_header_container
 id never
 id never_display
+id no
 id none
 id normal
 id notes
@@ -1209,6 +1212,7 @@ id textView
 id textView2
 id textView3
 id textView4
+id textView5
 id text_input_password_toggle
 id time
 id title
@@ -1229,11 +1233,13 @@ id up
 id upload
 id uploader
 id useLogo
+id user
 id view_offset_helper
 id wide
 id withText
 id wrap
 id wrap_content
+id yes
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
 integer app_bar_elevation_anim_duration
@@ -1296,6 +1302,7 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout exit_dialog
 layout messenger_button_send_blue_large
 layout messenger_button_send_blue_round
 layout messenger_button_send_blue_small

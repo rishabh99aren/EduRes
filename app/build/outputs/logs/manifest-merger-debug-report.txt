@@ -115,7 +115,7 @@ MERGED from [com.google.firebase:firebase-iid:17.0.4] /home/ashish/.gradle/cache
 	android:name
 		ADDED from /home/ashish/EduRes/app/src/main/AndroidManifest.xml:7:22-64
 application
-ADDED from /home/ashish/EduRes/app/src/main/AndroidManifest.xml:10:5-51:19
+ADDED from /home/ashish/EduRes/app/src/main/AndroidManifest.xml:10:5-52:19
 MERGED from [com.facebook.android:facebook-android-sdk:4.38.1] /home/ashish/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.38.1.aar/917bedcc3456eab69022baf918c82fce/AndroidManifest.xml:28:5-29:19
 MERGED from [com.facebook.android:facebook-android-sdk:4.38.1] /home/ashish/.gradle/caches/transforms-1/files-1.1/facebook-android-sdk-4.38.1.aar/917bedcc3456eab69022baf918c82fce/AndroidManifest.xml:28:5-29:19
 MERGED from [com.android.support:design:24.2.0] /home/ashish/.gradle/caches/transforms-1/files-1.1/design-24.2.0.aar/f3804de05c3162e8c2b9195f1762268c/AndroidManifest.xml:22:5-20
@@ -259,15 +259,11 @@ ADDED from /home/ashish/EduRes/app/src/main/AndroidManifest.xml:46:9-49:62
 	android:name
 		ADDED from /home/ashish/EduRes/app/src/main/AndroidManifest.xml:47:13-42
 activity#com.group16.example.edures.Forget_password
-ADDED from /home/ashish/EduRes/app/src/main/AndroidManifest.xml:50:9-62
+ADDED from /home/ashish/EduRes/app/src/main/AndroidManifest.xml:50:9-51:55
+	android:label
+		ADDED from /home/ashish/EduRes/app/src/main/AndroidManifest.xml:51:13-43
 	android:name
 		ADDED from /home/ashish/EduRes/app/src/main/AndroidManifest.xml:50:19-50
-meta-data#com.facebook.sdk.ApplicationId
-ADDED from /home/ashish/EduRes/app/src/main/AndroidManifest.xml:52:5-103
-	android:value
-		ADDED from /home/ashish/EduRes/app/src/main/AndroidManifest.xml:52:62-101
-	android:name
-		ADDED from /home/ashish/EduRes/app/src/main/AndroidManifest.xml:52:16-61
 uses-sdk
 INJECTED from /home/ashish/EduRes/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/ashish/EduRes/app/src/main/AndroidManifest.xml

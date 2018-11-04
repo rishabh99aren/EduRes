@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -46,8 +47,8 @@ public class Notes_activity extends AppCompatActivity implements AdapterView.OnI
     private String sel_course;
     private ProgressDialog progressDialog;
     private RecyclerView recyclerView;
-    Spinner course;
-    ArrayAdapter<CharSequence> adapter3;
+    private Spinner course;
+    private ArrayAdapter<CharSequence> adapter3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +61,11 @@ public class Notes_activity extends AppCompatActivity implements AdapterView.OnI
     @Override
     protected void onStart() {
         super.onStart();
+
+        progressDialog = new ProgressDialog(Notes_activity.this);
+        progressDialog.setTitle("Loading...");
+        progressDialog.setMessage("It will take few seconds!!");
+        progressDialog.show();
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         mDatabase=database.getReference().child("Notes");
         recyclerView  = findViewById(R.id.noteslist);
@@ -81,6 +87,7 @@ public class Notes_activity extends AppCompatActivity implements AdapterView.OnI
                     items.add(postSnapshot.getKey());
                     nadapter.notifyDataSetChanged();
                 }
+                progressDialog.dismiss();
             }
 
             @Override

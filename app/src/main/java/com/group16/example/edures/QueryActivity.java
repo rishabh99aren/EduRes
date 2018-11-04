@@ -48,6 +48,7 @@ public class QueryActivity extends AppCompatActivity implements AdapterView.OnIt
     private String fileId;
     private String details;
     private RecyclerView recyclerView;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +61,10 @@ public class QueryActivity extends AppCompatActivity implements AdapterView.OnIt
     @Override
     protected void onStart() {
         super.onStart();
+        progressDialog = new ProgressDialog(QueryActivity.this);
+        progressDialog.setTitle("Loading...");
+        progressDialog.setMessage("It will take few seconds!!");
+        progressDialog.show();
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         mDatabase=database.getReference().child("Query");
         recyclerView  = findViewById(R.id.querylist);
@@ -90,6 +95,7 @@ public class QueryActivity extends AppCompatActivity implements AdapterView.OnIt
                         startActivity(i);
                     }
                 }
+                progressDialog.dismiss();
             }
 
             @Override

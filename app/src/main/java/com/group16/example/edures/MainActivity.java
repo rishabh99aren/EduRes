@@ -1,5 +1,6 @@
 package com.group16.example.edures;
 
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -129,24 +130,23 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        final AlertDialog.Builder builder= new AlertDialog.Builder(MainActivity.this);
-        builder.setMessage("You are quitting the app\nAre you sure?");
-        builder.setCancelable(true);
-        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+        final Dialog dialog = new Dialog(MainActivity.this);
+        dialog.setContentView(R.layout.exit_dialog);
+        TextView positive = dialog.findViewById(R.id.yes);
+        positive.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int i) {
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        TextView negative = dialog.findViewById(R.id.no);
+        negative.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 dialog.cancel();
             }
         });
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                finish();
-                System.exit(0);
-            }
-        });
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
+        dialog.show();
     }
 
 

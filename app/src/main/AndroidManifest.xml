@@ -47,7 +47,8 @@
             android:name=".QueryActivity"
             android:label="Queries"
             android:parentActivityName=".FunctionActivity" />
-        <activity android:name=".Forget_password"></activity>
+        <activity android:name=".Forget_password"
+            android:label="Reset Password"></activity>
     </application>
 
 </manifest>

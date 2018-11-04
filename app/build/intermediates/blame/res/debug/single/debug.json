@@ -820,6 +820,10 @@
         "source": "/home/ashish/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/9f1f31e3082d19d51aa444b365890607/res/layout/abc_screen_toolbar.xml"
     },
     {
+        "merged": "/home/ashish/EduRes/app/build/intermediates/res/merged/debug/layout_exit_dialog.xml.flat",
+        "source": "/home/ashish/EduRes/app/src/main/res/layout/exit_dialog.xml"
+    },
+    {
         "merged": "/home/ashish/EduRes/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_star_half_black_48dp.png.flat",
         "source": "/home/ashish/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/9f1f31e3082d19d51aa444b365890607/res/drawable-xxhdpi-v4/abc_ic_star_half_black_48dp.png"
     },
@@ -1790,6 +1794,10 @@
     {
         "merged": "/home/ashish/EduRes/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
         "source": "/home/ashish/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/9f1f31e3082d19d51aa444b365890607/res/drawable-hdpi-v4/abc_popup_background_mtrl_mult.9.png"
+    },
+    {
+        "merged": "/home/ashish/EduRes/app/build/intermediates/res/merged/debug/drawable_sad.png.flat",
+        "source": "/home/ashish/EduRes/app/src/main/res/drawable/sad.png"
     },
     {
         "merged": "/home/ashish/EduRes/app/build/intermediates/res/merged/debug/drawable_abc_textfield_search_material.xml.flat",

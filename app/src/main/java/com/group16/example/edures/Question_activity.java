@@ -61,6 +61,10 @@ public class Question_activity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        progressDialog = new ProgressDialog(Question_activity.this);
+        progressDialog.setTitle("Loading...");
+        progressDialog.setMessage("It will take few seconds!!");
+        progressDialog.show();
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         mDatabase = database.getReference().child("Questions");
         recyclerView = findViewById(R.id.questionslist);
@@ -83,6 +87,7 @@ public class Question_activity extends AppCompatActivity {
                     items.add(postSnapshot.getKey());
                     nadapter.notifyDataSetChanged();
                 }
+                progressDialog.dismiss();
             }
 
             @Override
